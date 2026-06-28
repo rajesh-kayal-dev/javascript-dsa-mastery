@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounsing</title>
+
+    <script>
+        let timer;
+
+        function ApiCall() {
+            console.log("API is Calling")
+        }
+        function debounce() {
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                ApiCall()
+
+            }, 1000)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Debounce JavaScript</h1>
+    <input type="text" onkeypress="debounce()" placeholder="Search...">
+
+</body>
+
+</html>

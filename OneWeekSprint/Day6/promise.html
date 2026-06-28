@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompice exampel</title>
+    <script>
+        //     const promice = new Promise((resolve, reject) => {
+        //         resolve("hello");
+        //     })
+        //     promice.then((data) => {
+        //         console.log(data)
+        //     });
+        //     console.log("End");
+
+        function handelSubmit() {
+
+            let email = "admin@gmail.com";
+            let password = "admin1234";
+
+            let UEmail = document.getElementById("email").value;
+            let UPass = document.getElementById("pass").value;
+
+            console.log(UEmail);
+            console.log(UPass);
+
+            const isLogin = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (email == UEmail && password === UPass) {
+                        resolve("Login Success ✅")
+                    } else {
+                        reject("Login failed Try again!")
+                    }
+                }, 2000)
+            })
+
+            isLogin
+                .then((data) => alert(data))
+                .catch((err) => alert(err))
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <form bordered="1px">
+        <input type="email" placeholder="Enter Email" id="email"><br>
+        <input type="password" placeholder="Enter Password" id="pass"><br>
+        <button type="button" onclick="handelSubmit()">Login</button>
+    </form>
+
+</body>
+
+</html>
